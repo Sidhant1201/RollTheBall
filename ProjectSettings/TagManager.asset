@@ -8,6 +8,7 @@ TagManager:
   - PowerUp
   - wall
   - damageWalls
+  - Exit
   layers:
   - Default
   - TransparentFX

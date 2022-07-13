@@ -12,5 +12,10 @@ public class UI_manager : MonoBehaviour
 
     }
 
+    public void Onclick_Instructions()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     #endregion
 }

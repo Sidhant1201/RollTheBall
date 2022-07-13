@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Gameplay_UI_Manager : MonoBehaviour
 {
-    public GameObject button;
+   
     public Text scoreText;
 
     #region pause menu
@@ -16,10 +16,6 @@ public class Gameplay_UI_Manager : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    public void OnClick_ChangeButtonColor()
-    {
-        button.GetComponent<Image>().color = Random.ColorHSV();
-    }
 
     private void Start()
     {

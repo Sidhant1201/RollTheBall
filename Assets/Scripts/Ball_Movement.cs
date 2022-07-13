@@ -33,6 +33,9 @@ public class Ball_Movement : MonoBehaviour
     public Text showHealth;
     public HealthBar healthbarRef;
 
+    //for exit
+    [HideInInspector] public bool hitExit = false;
+
 
     private void Awake()
     {
@@ -83,7 +86,7 @@ public class Ball_Movement : MonoBehaviour
         }
 
         //for gameover scene
-        if (timeLeft == 0)
+        if (timeLeft <= 0)
         {
             endGame();
         }
@@ -138,6 +141,12 @@ public class Ball_Movement : MonoBehaviour
             addScore(50);
             _gameplayUIManager.scoreText.text = "Score:" + score;
         }
+        else if(other.gameObject.tag == "Exit")
+        {
+            hitExit = true;
+            endGame();
+
+        }
         
        
     }
@@ -163,10 +172,6 @@ public class Ball_Movement : MonoBehaviour
     private int addScore(int points)
     {
         score += points;
-        if (score >= 200 && _timerOn)
-        {
-            endGame();
-        }
         return score;
     }
 
